@@ -10,7 +10,7 @@
 <meta http-equiv="imagetoolbar" content="no" />
 <meta name="description" content="" />
 <meta name="keywords" content="" />
-<title>Login画面</title>
+<title>UserCreateConfirm画面</title>
 <style type="text/css">
 
 /*========TAG LAYOUT========*/
@@ -65,22 +65,34 @@ table {
 
 	<div id="main">
 		<div id="top">
-			<p>Login</p>
+			<p>UserCreateConfirm</p>
 		</div>
 
 		<div>
-			<h3>商品を購入する際にはログインをお願いします。</h3>
-			<s:form action="LoginAction">
-				<s:textfield name="loginUserId" />
-				<s:password name="loginPassword" />
-				<s:submit value="ログイン" />
-			</s:form>
-			<br />
+			<h3>登録する内容は以下でよろしいですか。</h3>
 
-			<div>
-				<span>新規ユーザー登録は</span> <a href='<s:url action="UserCreateAction"/>'>こちら</a>
 
-			</div>
+			<table>
+				<s:form action="UserCreateCompleteAction">
+					<tr id="box">
+						<td><label>ログインID</label></td>
+						<td><s:property value="loginUserId"  /></td>
+					</tr>
+
+					<tr id="box">
+						<td><label>ログインPASS</label></td>
+						<td><s:property value="loginPassword" /></td>
+					</tr>
+
+					<tr id="box">
+						<td><label>ユーザー名：</label></td>
+						<td><s:property value="userName"  /></td>
+					</tr>
+					<tr>
+						<td><s:submit value="完了" /></td>
+					</tr>
+				</s:form>
+			</table>
 
 		</div>
 	</div>
